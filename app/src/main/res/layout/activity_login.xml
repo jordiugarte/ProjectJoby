@@ -19,7 +19,7 @@
             android:layout_width="match_parent"
             android:layout_height="50dp"
             android:hint="Email"
-            android:textColorHint="@color/colorPrimaryWhite"
+            android:textColorHint="@color/colorPrimaryDark"
             android:background="@drawable/edit_round"
             android:drawableLeft="@drawable/user"
             android:paddingLeft="10dp"
@@ -34,7 +34,7 @@
             android:layout_width="match_parent"
             android:layout_height="50dp"
             android:hint="Contraseña"
-            android:textColorHint="@color/colorPrimaryWhite"
+            android:textColorHint="@color/colorPrimaryDark"
             android:background="@drawable/edit_round"
             android:drawableLeft="@drawable/lock"
             android:paddingLeft="10dp"
@@ -47,23 +47,25 @@
     </LinearLayout>
 
     <Button
-        android:id="@+id/SignInUsuario"
+        android:id="@+id/buttonUser_loginActivity"
         android:layout_width="wrap_content"
         android:layout_height="50dp"
         android:layout_gravity="bottom|center"
         android:layout_marginBottom="125dp"
         android:background="@drawable/button"
-        android:text="iniciar seción"
+        android:text="iniciar sesión"
         android:padding="10dp"
         android:textColor="@color/colorPrimary"
         android:textSize="20sp"
         android:onClick="signIn"/>
 
+
     <TextView
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:text="Registrar"
-        android:textColor="@color/colorPrimaryWhite"
-        android:onClick="register"/>
+        android:textColor="@color/colorPrimaryDark"
+        android:onClick="register"
+        android:visibility="visible"/>
 
 </FrameLayout>

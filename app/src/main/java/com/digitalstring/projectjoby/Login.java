@@ -1,12 +1,14 @@
 package com.digitalstring.projectjoby;
 
 import android.app.ProgressDialog;
+import android.content.Intent;
 import android.content.SharedPreferences;
 import android.os.Bundle;
 import android.support.annotation.NonNull;
 import android.support.v7.app.AppCompatActivity;
 import android.text.TextUtils;
 import android.view.View;
+import android.widget.Button;
 import android.widget.EditText;
 import android.widget.Toast;
 
@@ -30,10 +32,31 @@ public class Login extends AppCompatActivity {
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
-        sharedPreferences = getSharedPreferences("oneTimeLogin", MODE_PRIVATE);
-
+        //sharedPreferences = getSharedPreferences("oneTimeLogin", MODE_PRIVATE);
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_login);
+        Intent intent = getIntent();
+        Boolean register_signin = intent.getBooleanExtra("register_signin",false);
+        Button button = findViewById(R.id.buttonUser_loginActivity);
+        if(register_signin) {
+            button.setText("INICIAR SESIÓN");
+            button.setOnClickListener(new View.OnClickListener() {
+                                          @Override
+                                          public void onClick(View view) {
+                                              signIn(view);
+                                          }
+            }
+            );
+        }else{
+            button.setText("REGISTRARSE");
+            button.setOnClickListener(new View.OnClickListener() {
+                                          @Override
+                                          public void onClick(View view) {
+                                              register(view);
+                                          }
+                                      }
+            );
+        }
         editTextEmail = findViewById(R.id.usuarioLoginActivity);
         editTextPassword = findViewById(R.id.passwordLoginActivity);
 
@@ -42,16 +65,17 @@ public class Login extends AppCompatActivity {
         progressDialog = new ProgressDialog(this);
     }
 
+
+
+
     public  void signIn ( View view ){
         String email = editTextEmail.getText().toString().trim();
         String password = editTextPassword.getText().toString().trim();
         if ( TextUtils.isEmpty(email)){
             Toast.makeText(this,"Se requiere ingresar email",Toast.LENGTH_LONG).show();
-            return;
         }
         if (TextUtils.isEmpty(password)){
             Toast.makeText(this,"Se requiere ingresar contraseña",Toast.LENGTH_LONG).show();
-            return;
         }
         progressDialog.setMessage("realizando consulta en linea...");
         progressDialog.show();
