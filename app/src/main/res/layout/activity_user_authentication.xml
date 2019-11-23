@@ -5,7 +5,7 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context=".MainActivity"
+    tools:context=".UserAuthentication"
     android:background="@color/colorPrimary">
 
 
@@ -20,21 +20,24 @@
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_gravity="center"
-            android:background="@color/colorPrimary"
-            android:text="Registrarse"
+            android:padding="8dp"
+            android:background="@drawable/edit_round"
+            android:textColor="@color/colorPrimaryDark"
+            android:text="INICIAR SESIÓN"
             android:onClick="register"
-            android:textColor="@color/colorPrimaryWhite"
             android:textSize="20sp" />
 
 
         <Button
+            android:layout_marginTop="15dp"
             android:layout_width="wrap_content"
             android:layout_height="match_parent"
+            android:padding="8dp"
             android:layout_gravity="center"
-            android:background="@color/colorPrimary"
+            android:background="@drawable/edit_round"
+            android:textColor="@color/colorPrimaryDark"
             android:onClick="log_in"
-            android:text="Iniciar Seción"
-            android:textColor="@color/colorPrimaryWhite"
+            android:text="REGISTRARSE"
             android:textSize="20sp" />
 
     </LinearLayout>
@@ -44,6 +47,9 @@
         android:layout_height="wrap_content"
         android:layout_gravity="bottom|right"
         android:text="Organizaciones"
-        android:padding="20dp"/>
+        android:layout_margin="15dp"
+        android:background="@drawable/edit_round"
+        android:textColor="@color/colorPrimaryDark"
+        android:padding="8dp"/>
 
 </FrameLayout>

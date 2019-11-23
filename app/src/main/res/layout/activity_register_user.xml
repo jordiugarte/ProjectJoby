@@ -1,0 +1,63 @@
+<?xml version="1.0" encoding="utf-8"?>
+<FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
+xmlns:app="http://schemas.android.com/apk/res-auto"
+xmlns:tools="http://schemas.android.com/tools"
+android:layout_width="match_parent"
+android:layout_height="match_parent"
+tools:context=".RegisterUser"
+android:background="@color/colorPrimary"
+android:id="@+id/parentLoginUser">
+
+<LinearLayout
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:layout_gravity="center"
+    android:layout_margin="25dp"
+    android:orientation="vertical">
+
+    <EditText
+        android:id="@+id/usuarioLoginActivity"
+        android:layout_width="match_parent"
+        android:layout_height="50dp"
+        android:hint="Email"
+        android:textColorHint="@color/colorPrimaryDark"
+        android:background="@drawable/edit_round"
+        android:drawableLeft="@drawable/user"
+        android:paddingLeft="10dp"
+        android:imeOptions="actionNext"
+        android:inputType="text"
+        android:maxLines="1"
+        android:textColor="#FAF9F8"
+        android:textSize="20dp"/>
+
+    <EditText
+        android:id="@+id/passwordLoginActivity"
+        android:layout_width="match_parent"
+        android:layout_height="50dp"
+        android:hint="Contraseña"
+        android:textColorHint="@color/colorPrimaryDark"
+        android:background="@drawable/edit_round"
+        android:drawableLeft="@drawable/lock"
+        android:paddingLeft="10dp"
+        android:imeOptions="actionGo"
+        android:inputType="textPassword"
+        android:maxLines="1"
+        android:textColor="#FCFCFC"
+        android:textSize="20dp" />
+
+</LinearLayout>
+
+<Button
+    android:id="@+id/buttonUser_loginActivity"
+    android:layout_width="wrap_content"
+    android:layout_height="50dp"
+    android:layout_gravity="bottom|center"
+    android:layout_marginBottom="125dp"
+    android:background="@drawable/button"
+    android:text="Registrarse"
+    android:padding="10dp"
+    android:textColor="@color/colorPrimary"
+    android:textSize="20sp"
+    android:onClick="register"/>
+
+</FrameLayout>
