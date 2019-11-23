@@ -15,7 +15,8 @@ import com.google.firebase.auth.AuthResult;
 import com.google.firebase.auth.FirebaseAuth;
 import com.google.firebase.auth.FirebaseAuthUserCollisionException;
 
-public class RegisterOrganization extends AppCompatActivity {
+public class RegisterUserActivity extends AppCompatActivity {
+
     //Atributes
     private EditText editTextEmail;
     private EditText editTextPassword;
@@ -28,7 +29,7 @@ public class RegisterOrganization extends AppCompatActivity {
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_register_organization);
+        setContentView(R.layout.activity_register_user);
         editTextEmail = findViewById(R.id.usuarioLoginActivity);
         editTextPassword = findViewById(R.id.passwordLoginActivity);
 
@@ -37,7 +38,7 @@ public class RegisterOrganization extends AppCompatActivity {
         progressDialog = new ProgressDialog(this);
     }
 
-    public void register ( View view ){
+    public void register( View view ){
         String email = editTextEmail.getText().toString().trim();
         String password = editTextPassword.getText().toString().trim();
         if ( TextUtils.isEmpty(email)){
@@ -56,12 +57,12 @@ public class RegisterOrganization extends AppCompatActivity {
                     @Override
                     public void onComplete(@NonNull Task<AuthResult> task) {
                         if ( task.isSuccessful() ){
-                            Toast.makeText(RegisterOrganization.this , " se ha registrado el email", Toast.LENGTH_LONG).show();
+                            Toast.makeText(RegisterUserActivity.this , " se ha registrado el email", Toast.LENGTH_LONG).show();
                         }else{
-                            if ( task.getException() instanceof FirebaseAuthUserCollisionException) {
-                                Toast.makeText(RegisterOrganization.this, "Usuario existente", Toast.LENGTH_SHORT).show();
+                            if ( task.getException() instanceof  FirebaseAuthUserCollisionException ) {
+                                Toast.makeText(RegisterUserActivity.this, "Usuario existente", Toast.LENGTH_SHORT).show();
                             }else {
-                                Toast.makeText(RegisterOrganization.this, "no se pudo registrar el usuario", Toast.LENGTH_LONG).show();
+                                Toast.makeText(RegisterUserActivity.this, "no se pudo registrar el usuario", Toast.LENGTH_LONG).show();
                             }
                         }
                         progressDialog.dismiss();

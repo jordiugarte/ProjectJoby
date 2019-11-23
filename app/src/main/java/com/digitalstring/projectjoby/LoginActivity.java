@@ -16,7 +16,7 @@ import com.google.firebase.auth.AuthResult;
 import com.google.firebase.auth.FirebaseAuth;
 import com.google.firebase.auth.FirebaseAuthUserCollisionException;
 
-public class Login extends AppCompatActivity {
+public class LoginActivity extends AppCompatActivity {
 
     //Atributes
     SharedPreferences sharedPreferences;
@@ -61,13 +61,13 @@ public class Login extends AppCompatActivity {
                     @Override
                     public void onComplete(@NonNull Task<AuthResult> task) {
                         if ( task.isSuccessful() ){
-                            Toast.makeText(Login.this , " Bienvenido ", Toast.LENGTH_LONG).show();
+                            Toast.makeText(LoginActivity.this , " Bienvenido ", Toast.LENGTH_LONG).show();
                             //TODO make the call of the next activity
                         }else{
                             if ( task.getException() instanceof  FirebaseAuthUserCollisionException ) {
-                                Toast.makeText(Login.this, "Usuario inexistente", Toast.LENGTH_SHORT).show();
+                                Toast.makeText(LoginActivity.this, "Usuario inexistente", Toast.LENGTH_SHORT).show();
                             }else {
-                                Toast.makeText(Login.this, "no se pudo registrar el usuario", Toast.LENGTH_LONG).show();
+                                Toast.makeText(LoginActivity.this, "no se pudo registrar el usuario", Toast.LENGTH_LONG).show();
                             }
                         }
                         progressDialog.dismiss();
@@ -94,12 +94,12 @@ public class Login extends AppCompatActivity {
                     @Override
                     public void onComplete(@NonNull Task<AuthResult> task) {
                         if ( task.isSuccessful() ){
-                            Toast.makeText(Login.this , " se ha registrado el email", Toast.LENGTH_LONG).show();
+                            Toast.makeText(LoginActivity.this , " se ha registrado el email", Toast.LENGTH_LONG).show();
                         }else{
                             if ( task.getException() instanceof  FirebaseAuthUserCollisionException ) {
-                                Toast.makeText(Login.this, "Usuario existente", Toast.LENGTH_SHORT).show();
+                                Toast.makeText(LoginActivity.this, "Usuario existente", Toast.LENGTH_SHORT).show();
                             }else {
-                                Toast.makeText(Login.this, "no se pudo registrar el usuario", Toast.LENGTH_LONG).show();
+                                Toast.makeText(LoginActivity.this, "no se pudo registrar el usuario", Toast.LENGTH_LONG).show();
                             }
                         }
                         progressDialog.dismiss();

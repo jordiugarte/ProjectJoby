@@ -11,17 +11,17 @@
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
         android:theme="@style/AppTheme">
-        <activity android:name=".SignInOrganization"></activity>
-        <activity android:name=".RegisterOrganization" />
-        <activity android:name=".RegisterUser" />
-        <activity android:name=".UserAuthentication">
+        <activity android:name=".SignInOrganizationActivity"></activity>
+        <activity android:name=".RegisterOrganizationActivity" />
+        <activity android:name=".RegisterUserActivity" />
+        <activity android:name=".UserAuthenticationActivity">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
 
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
-        <activity android:name=".SignInUser" />
+        <activity android:name=".SignInUserActivity" />
     </application>
 
 </manifest>
