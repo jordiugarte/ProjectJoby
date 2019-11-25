@@ -14,7 +14,7 @@ public class UserAuthenticationActivity extends AppCompatActivity {
     }
 
     public void register ( View view ){
-        Intent intent = new Intent(this, SignInUserActivity.class);
+        Intent intent = new Intent(this, RegisterUserActivity.class);
         startActivity(intent);
         intent.putExtra("register_signin",true);
     }

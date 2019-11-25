@@ -47,17 +47,17 @@ android:id="@+id/parentLoginUser">
 
 </LinearLayout>
 
-<Button
-    android:id="@+id/buttonUser_loginActivity"
-    android:layout_width="wrap_content"
-    android:layout_height="50dp"
-    android:layout_gravity="bottom|center"
-    android:layout_marginBottom="125dp"
-    android:background="@drawable/button"
-    android:text="iniciar sesión"
-    android:padding="10dp"
-    android:textColor="@color/colorPrimary"
-    android:textSize="20sp"
-    android:onClick="register"/>
+    <Button
+        android:id="@+id/buttonUser_loginActivity"
+        android:layout_width="wrap_content"
+        android:layout_height="50dp"
+        android:layout_gravity="bottom|center"
+        android:layout_marginBottom="125dp"
+        android:background="@drawable/button"
+        android:onClick="register"
+        android:padding="10dp"
+        android:text="registrar"
+        android:textColor="@color/colorPrimary"
+        android:textSize="20sp" />
 
 </FrameLayout>

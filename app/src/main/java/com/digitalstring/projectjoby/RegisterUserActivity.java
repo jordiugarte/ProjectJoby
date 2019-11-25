@@ -38,30 +38,30 @@ public class RegisterUserActivity extends AppCompatActivity {
         progressDialog = new ProgressDialog(this);
     }
 
-    public void register( View view ){
+    public void register(View view) {
         String email = editTextEmail.getText().toString().trim();
         String password = editTextPassword.getText().toString().trim();
-        if ( TextUtils.isEmpty(email)){
-            Toast.makeText(this,"Se requiere ingresar email",Toast.LENGTH_LONG).show();
+        if (TextUtils.isEmpty(email)) {
+            Toast.makeText(this, "Se requiere ingresar email", Toast.LENGTH_LONG).show();
             return;
         }
-        if (TextUtils.isEmpty(password)){
-            Toast.makeText(this,"Se requiere ingresar contraseña",Toast.LENGTH_LONG).show();
+        if (TextUtils.isEmpty(password)) {
+            Toast.makeText(this, "Se requiere ingresar contraseña", Toast.LENGTH_LONG).show();
             return;
         }
         progressDialog.setMessage("realizando consulta en linea...");
         progressDialog.show();
 
-        mAuth.createUserWithEmailAndPassword(email,password)
+        mAuth.createUserWithEmailAndPassword(email, password)
                 .addOnCompleteListener(this, new OnCompleteListener<AuthResult>() {
                     @Override
                     public void onComplete(@NonNull Task<AuthResult> task) {
-                        if ( task.isSuccessful() ){
-                            Toast.makeText(RegisterUserActivity.this , " se ha registrado el email", Toast.LENGTH_LONG).show();
-                        }else{
-                            if ( task.getException() instanceof  FirebaseAuthUserCollisionException ) {
+                        if (task.isSuccessful()) {
+                            Toast.makeText(RegisterUserActivity.this, " se ha registrado el email", Toast.LENGTH_LONG).show();
+                        } else {
+                            if (task.getException() instanceof FirebaseAuthUserCollisionException) {
                                 Toast.makeText(RegisterUserActivity.this, "Usuario existente", Toast.LENGTH_SHORT).show();
-                            }else {
+                            } else {
                                 Toast.makeText(RegisterUserActivity.this, "no se pudo registrar el usuario", Toast.LENGTH_LONG).show();
                             }
                         }

@@ -1,6 +1,7 @@
 package com.digitalstring.projectjoby;
 
 import android.app.ProgressDialog;
+import android.content.Intent;
 import android.os.Bundle;
 import android.support.annotation.NonNull;
 import android.support.v7.app.AppCompatActivity;
@@ -56,6 +57,8 @@ public class SignInUserActivity extends AppCompatActivity {
                     public void onComplete(@NonNull Task<AuthResult> task) {
                         if ( task.isSuccessful() ){
                             Toast.makeText(SignInUserActivity.this , " Bienvenido ", Toast.LENGTH_LONG).show();
+                            Intent intent = new Intent(SignInUserActivity.this, MainActivity.class);
+                            startActivity(intent);
                             //TODO make the call of the next activity
                         }else{
                             if ( task.getException() instanceof  FirebaseAuthUserCollisionException ) {

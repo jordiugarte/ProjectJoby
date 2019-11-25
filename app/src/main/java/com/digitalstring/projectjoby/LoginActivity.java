@@ -24,7 +24,6 @@ public class LoginActivity extends AppCompatActivity {
     private EditText editTextPassword;
     private ProgressDialog progressDialog;
 
-
     //Declare a firebaseAuth object
     private FirebaseAuth mAuth;
 
@@ -106,5 +105,4 @@ public class LoginActivity extends AppCompatActivity {
                     }
                 });
     }
-    
 }
